@@ -15,7 +15,7 @@ rc = p.returncode
 
 l = []
 
-for entry in json.loads(output)['response']['docs']:
+for entry in json.loads(output.decode('utf-8'))['response']['docs']:
     l.append(os.path.basename(entry['id']))
 
 d = { i : l[i] for i in range(0, len(l) ) }
